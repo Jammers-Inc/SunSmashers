@@ -2,32 +2,42 @@ using System;
 using GameObjects.Astronaut.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace GameObjects.SpaceShip.Scripts
 {
     public class SpaceShip : MonoBehaviour
     {
-    
-        private Rigidbody2D _rb;
+        
         private SpriteRenderer _sr;
         private Camera _cam;
         private DistanceJoint2D _joint;
+        private UpdateLineRendererTarget _updateLineRenderer;
     
+        public GameObject aimPreview;
+        public Color[] colors;
+        
         public Astronaut.Scripts.Astronaut[] astronauts;
         [Range(0, 100000)]
         public float launchForce;
+
+        public float lazzorLength;
+        
         Vector2 gravity;
         private int _next;
         private Vector3 _lastPos;
         private Vector3 _mousePos;
 
+        
+
         private bool _isShot;
 
         private void OnEnable()
         {
-            _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
             _joint = GetComponent<DistanceJoint2D>();
+
+            _updateLineRenderer = aimPreview.GetComponent<UpdateLineRendererTarget>();
             _cam = Camera.main;
         }
 
@@ -36,16 +46,11 @@ namespace GameObjects.SpaceShip.Scripts
             gravity = Physics2D.gravity;
         }
 
-        // Update is called once per frame
-        void Update()
+        private void LateUpdate()
         {
-            var position = transform.position;
-
-            
-            
-            Debug.DrawLine(position, GetWorldPositionOnPlane(_mousePos,0), Color.green);
-            Debug.DrawLine(_lastPos, position, _sr.color, 1f ,true);
-            _lastPos = position;
+            Vector3 position = transform.position;
+            _updateLineRenderer.target.position = position + (GetWorldPositionOnPlane(_mousePos,0) - position).normalized * lazzorLength;
+            _updateLineRenderer.renderer.material.SetColor("EmissionColor", colors[_next]);
         }
 
         public void Shoot(InputAction.CallbackContext context)
@@ -63,12 +68,9 @@ namespace GameObjects.SpaceShip.Scripts
                 _isShot = true;
             }
         }
-
         
-
         public void MousePosition(InputAction.CallbackContext context)
         {
-            
             _mousePos = context.ReadValue<Vector2>();
         }
 
