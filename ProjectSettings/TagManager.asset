@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ship
+  - Planet
+  - Astronaut
   layers:
   - Default
   - TransparentFX
@@ -14,9 +17,9 @@ TagManager:
   - AttachableBlue
   - AttachableOrange
   - AttachableBoth
-  - 
-  - 
-  - 
+  - Ship
+  - Astronaut
+  - Return
   - 
   - 
   - 
@@ -40,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Planets
+    uniqueID: 3021183051
     locked: 0

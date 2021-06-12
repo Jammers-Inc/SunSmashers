@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlanetBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 3686014250394601109, guid: 84e6e7c01f37615478a1b84036c9b262, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84e6e7c01f37615478a1b84036c9b262, type: 3}
