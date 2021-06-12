@@ -53,15 +53,18 @@ namespace GameObjects.SpaceShip.Scripts
             if (!_isShot)
             {
                 Astronaut.Scripts.Astronaut target = astronauts[_next];
-                target.detachFromShip(true);
+                target.DetachFromShip(true);
                 
                 Rigidbody2D rb = target.gameObject.GetComponent<Rigidbody2D>();
-                Launch(rb);
+                Vector3 launchDirection = (GetWorldPositionOnPlane(_mousePos,0) - transform.position).normalized;
+                Launch(rb, launchDirection, launchForce);
                 
                 target.SetUsed(true);
                 _isShot = true;
             }
         }
+
+        
 
         public void MousePosition(InputAction.CallbackContext context)
         {
@@ -69,9 +72,9 @@ namespace GameObjects.SpaceShip.Scripts
             _mousePos = context.ReadValue<Vector2>();
         }
 
-        public void Launch(Rigidbody2D launched)
+        public void Launch(Rigidbody2D launched, Vector3 direction, float force)
         {
-            launched.AddForce((GetWorldPositionOnPlane(_mousePos,0) - transform.position).normalized * launchForce);
+            launched.AddForce( direction * force);
         }
 
         public void ActivateHinge()
@@ -113,5 +116,7 @@ namespace GameObjects.SpaceShip.Scripts
         {
             Physics2D.gravity = attached.transform.position.y < 0 ? -gravity : gravity;
         }
+
+        
     }
 }

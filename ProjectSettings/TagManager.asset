@@ -23,7 +23,7 @@ TagManager:
   - Sun
   - PassableBlue
   - PassableOrange
-  - 
+  - Return
   - 
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1870624947
+    locked: 0
   - name: Planets
     uniqueID: 3021183051
+    locked: 0
+  - name: Play
+    uniqueID: 2455008013
+    locked: 0
+  - name: Asteroid
+    uniqueID: 2239710881
     locked: 0

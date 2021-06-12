@@ -26,7 +26,8 @@ namespace GameObjects.Astronaut.Scripts
             _rb.constraints = RigidbodyConstraints2D.FreezeAll;
             _astronaut.spaceShip.ActivateHinge();
             _astronaut.spaceShip.Next();
-            _astronaut.LookAt(other.transform);
+            Debug.Log(other.transform.position);
+            _astronaut.SetVisualTargets(other.transform, true);
             isAttached = true;
             _astronaut.spaceShip.ResetShot();
             _astronaut.spaceShip.DetachOthers(gameObject);
