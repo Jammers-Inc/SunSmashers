@@ -13,7 +13,7 @@ namespace GameObjects.Astronaut.Scripts
 
         public SpaceShip.Scripts.SpaceShip spaceShip;
         private bool _isRetracting;
-        [Range(1,10)]
+        [Range(0.001f,10)]
         public int returnSpeed;
     
         private Vector3 _lastPos;
@@ -21,7 +21,7 @@ namespace GameObjects.Astronaut.Scripts
         private float _lerpFac;
 
         private float _flownDistance;
-        [Range(1,1000)]
+        [Range(0.01f,30)]
         public float maxDistance;
         private Transform _originalParent;
 
@@ -31,11 +31,6 @@ namespace GameObjects.Astronaut.Scripts
             _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
             _a = GetComponent<Attachable>();
-        }
-
-        void Start()
-        {
-        
         }
 
         // Update is called once per frame
