@@ -14,7 +14,7 @@ namespace GameObjects.SpaceShip.Scripts
         private DistanceJoint2D _joint;
         private UpdateLineRendererTarget _updateLineRenderer;
 
-        public AudioSource audio;
+        public new AudioSource audio;
         public GameObject aimPreview;
         public Color[] colors;
         
