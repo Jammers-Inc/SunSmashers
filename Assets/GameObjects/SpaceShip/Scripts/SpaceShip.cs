@@ -8,7 +8,7 @@ namespace GameObjects.SpaceShip.Scripts
 {
     public class SpaceShip : MonoBehaviour
     {
-        
+        private Rigidbody2D _rb;
         private SpriteRenderer _sr;
         private Camera _cam;
         private DistanceJoint2D _joint;
@@ -21,6 +21,8 @@ namespace GameObjects.SpaceShip.Scripts
         [Range(0, 100000)]
         public float launchForce;
 
+        public bool orangeFirst;
+
         public float lazzorLength;
         
         Vector2 gravity;
@@ -31,12 +33,13 @@ namespace GameObjects.SpaceShip.Scripts
         
 
         private bool _isShot;
+        private static readonly int EmissionColor = Shader.PropertyToID("EmissionColor");
 
         private void OnEnable()
         {
             _sr = GetComponent<SpriteRenderer>();
             _joint = GetComponent<DistanceJoint2D>();
-
+            _rb = GetComponent<Rigidbody2D>();
             _updateLineRenderer = aimPreview.GetComponent<UpdateLineRendererTarget>();
             _cam = Camera.main;
         }
@@ -44,13 +47,17 @@ namespace GameObjects.SpaceShip.Scripts
         private void Start()
         {
             gravity = Physics2D.gravity;
+            _next = orangeFirst ? 1 : 0;
+            _rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
-        private void LateUpdate()
-        {
+        private void Update()
+        { 
             Vector3 position = transform.position;
+        
+            _sr.flipX = _rb.velocity.x < 0;
             _updateLineRenderer.target.position = position + (GetWorldPositionOnPlane(_mousePos,0) - position).normalized * lazzorLength;
-            _updateLineRenderer.renderer.material.SetColor("EmissionColor", colors[_next]);
+            _updateLineRenderer.renderer.material.SetColor(EmissionColor, colors[_next]);
         }
 
         public void Shoot(InputAction.CallbackContext context)
@@ -117,6 +124,7 @@ namespace GameObjects.SpaceShip.Scripts
         public void AttachmentCallback(GameObject attached)
         {
             Physics2D.gravity = attached.transform.position.y < 0 ? -gravity : gravity;
+            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
         

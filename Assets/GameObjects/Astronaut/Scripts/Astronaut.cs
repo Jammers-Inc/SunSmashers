@@ -37,16 +37,7 @@ namespace GameObjects.Astronaut.Scripts
             _a = GetComponent<Attachable>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            Debug.DrawLine(_lastPos, transform.position, _sr.color, 10, true);
-            
-            //Debug.DrawLine(transform.position, transform.forward, Color.red);
-            _lastPos = transform.position;
-        }
-
-        private void LateUpdate()
+        private void Update()
         {
             LerpToShip();
         }

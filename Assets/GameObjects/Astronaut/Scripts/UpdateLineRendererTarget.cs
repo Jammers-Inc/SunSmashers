@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
+[ExecuteInEditMode]
 public class UpdateLineRendererTarget : MonoBehaviour
 {
     public Transform target;
-    public LineRenderer renderer;
+    public new LineRenderer renderer;
 
     private void OnEnable()
     {

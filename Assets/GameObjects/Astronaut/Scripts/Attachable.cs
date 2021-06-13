@@ -13,13 +13,9 @@ namespace GameObjects.Astronaut.Scripts
         private void OnEnable()
         {
             _rb = GetComponent<Rigidbody2D>();
-        }
-
-        private void Start()
-        {
             _astronaut = GetComponent<Astronaut>();
         }
-
+        
         
         public void Attach(GameObject other)
         {
@@ -42,8 +38,5 @@ namespace GameObjects.Astronaut.Scripts
                 _astronaut.StartReturn();
             }
         }
-    
-        
-    
     }
 }
