@@ -6,7 +6,7 @@ namespace General_Scripts
     public class SceneManager : MonoBehaviour
     {
         public static SceneManager manager;
-        public static int LastLoadedScene;
+        private int LastLoadedScene;
         private int _lastScene = 5;
 
         private void OnEnable()
@@ -23,6 +23,11 @@ namespace General_Scripts
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(id);
             LastLoadedScene = id;
+        }
+
+        public void ReloadScene()
+        {
+            LoadScene(LastLoadedScene);
         }
 
         public void LoadNext()
