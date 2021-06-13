@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class Winscreen : MonoBehaviour
 {
+    public static Winscreen instance;
+
+    void Start()
+    {
+        Winscreen.instance = this;
+    }
     public void Next()
     {
         SceneManager.manager.LoadNext();
