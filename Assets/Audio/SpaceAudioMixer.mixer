@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-8840271855051219653
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 034bcbbc491f24143bb9e87a8f56cfce
+  m_EffectName: Send
+  m_MixLevel: 7486fcae4420ab04db962c4507b8e23f
+  m_Parameters: []
+  m_SendTarget: {fileID: 4848399539886430882}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-3514932999904394847
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -14,6 +28,26 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1235428513679055605
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MusicDuck
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 2748fa83fb3d0b041b20c8a77ab48cac
+  m_Children: []
+  m_Volume: 8a18f3d65abf86a45a9224988fa154bc
+  m_Pitch: 5c2222d89cf21b146a23b9ab3eb69d30
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 2394234352940867034}
+  - {fileID: -8840271855051219653}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -37,6 +71,7 @@ AudioMixerController:
     - a3e36d7386d831b4f94a362e4af5cd2b
     - a412df9f43c5075468ff4ddb35dbcf65
     - 67d2950ad6ab6634895cc1fa06d427e0
+    - 2748fa83fb3d0b041b20c8a77ab48cac
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -84,8 +119,26 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5183e9a09849e8d4d8f0cae64e417383
-  m_FloatValues: {}
+  m_FloatValues:
+    022f03e0a30053e4ba96ae428356ae7d: 0
+    468f5ba988724cd40b80087dfcc978cb: -60
+    7486fcae4420ab04db962c4507b8e23f: 0
+    df701a1f27c25ab45ad88d25ab0a06f9: 1
   m_TransitionOverrides: {}
+--- !u!244 &2394234352940867034
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: cbbd16b0e4372d9499e229fccf1cd378
+  m_EffectName: Attenuation
+  m_MixLevel: 76d9f22195ff80341a70efbaab28453a
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &3084492128751637226
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -114,11 +167,40 @@ AudioMixerGroupController:
   m_Pitch: 10960c7766b373d409a6180a005f19fe
   m_Send: 00000000000000000000000000000000
   m_Effects:
+  - {fileID: 4848399539886430882}
   - {fileID: -3514932999904394847}
   m_UserColorIndex: 6
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &4848399539886430882
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 882b82674aa2bcf408eb31612a650670
+  m_EffectName: Duck Volume
+  m_MixLevel: e09d1d0256dd7854681af41cd6c17a87
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 468f5ba988724cd40b80087dfcc978cb
+  - m_ParameterName: Ratio
+    m_GUID: 4fcd8fa5b28624142bbc36d975fd5d53
+  - m_ParameterName: Attack Time
+    m_GUID: 628427960b23fe3499cb867f2436acf6
+  - m_ParameterName: Release Time
+    m_GUID: df701a1f27c25ab45ad88d25ab0a06f9
+  - m_ParameterName: Make-up Gain
+    m_GUID: aa76baf0374d27944b3bb8886b76c387
+  - m_ParameterName: Knee
+    m_GUID: ea479f1627543f147be7002f602bdf9c
+  - m_ParameterName: Sidechain Mix
+    m_GUID: 59d9820938e8b3c4ea45870bc9942244
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &8384214749081610685
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -128,7 +210,8 @@ AudioMixerGroupController:
   m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 67d2950ad6ab6634895cc1fa06d427e0
-  m_Children: []
+  m_Children:
+  - {fileID: -1235428513679055605}
   m_Volume: 45ec1517ccad5e446988312b88790d43
   m_Pitch: 0b3659a780444064c91da6093177d45d
   m_Send: 00000000000000000000000000000000
