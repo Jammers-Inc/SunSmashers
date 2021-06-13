@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 [ExecuteAlways]
@@ -34,9 +35,18 @@ public class Sun : MonoBehaviour
         if (other.gameObject.CompareTag("Astronaut"))
         {
             explosion.SetActive(true);
+            StartCoroutine(WaitForMenu());
         }
     }
 
+    IEnumerator WaitForMenu()
+    {
+        yield return new WaitForSeconds(3);
+        
+        UIHandler.Handler.ShowWinScreen();
+    }
+    
+    
     public enum Barrier
     {
         none, blue, orange
