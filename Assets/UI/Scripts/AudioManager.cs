@@ -10,9 +10,21 @@ public class AudioManager : MonoBehaviour
     public float sfxVolume = 1f;
 
     public AudioMixer mixer;
+    public static AudioManager instance;
 
     public enum Volume{master, music, sfx, bit, ui};
 
+    void Awake()
+    {
+        if(AudioManager.instance == null)
+        {
+            AudioManager.instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else Destroy(gameObject);
+    }
+    
+    
     private float RemapVolumePercent(float percent)
     {
         float newValue = 0f;

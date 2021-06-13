@@ -27,7 +27,6 @@ namespace GameObjects.Astronaut.Scripts
         private float _flownDistance;
         private bool _isRetracting;
         private bool _isFlying;
-        private int _defaultLayer;
 
 
 
@@ -36,7 +35,6 @@ namespace GameObjects.Astronaut.Scripts
             _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
             _a = GetComponent<Attachable>();
-            _defaultLayer = gameObject.layer;
         }
 
         private void Update()
@@ -105,7 +103,7 @@ namespace GameObjects.Astronaut.Scripts
             SetUsed(false);
             DetachFromShip(false);
             spaceShip.ResetShot();
-            gameObject.layer = _defaultLayer;
+            gameObject.layer = 10;
         }
         
         private void OnCollisionEnter2D(Collision2D other)
@@ -115,12 +113,6 @@ namespace GameObjects.Astronaut.Scripts
                 if (((int) Math.Pow(2, other.gameObject.layer) & _a.attachableLayers.value) > 0 && !_isRetracting)
                 {
                     _a.Attach(other.gameObject);
-                    return;
-                }
-
-                if (other.gameObject.layer == 12)
-                {
-                    GameState.State.Win();
                     return;
                 }
             }
