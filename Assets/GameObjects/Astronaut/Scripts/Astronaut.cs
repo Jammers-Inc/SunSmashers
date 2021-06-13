@@ -19,6 +19,8 @@ namespace GameObjects.Astronaut.Scripts
         public int returnSpeed;
         [Range(0.01f,30)]
         public float maxDistance;
+        
+        public SoundPlayer soundPlayer;
     
         private Vector3 _lastPos;
         private Vector3 _lerpStart;
@@ -54,7 +56,11 @@ namespace GameObjects.Astronaut.Scripts
         private void FixedUpdate()
         {
             if(_isFlying) LookAt(transform.position + (Vector3)_rb.velocity.normalized);
-            if((transform.position - spaceShip.transform.position).magnitude > maxDistance) StartReturn();
+            if ((transform.position - spaceShip.transform.position).magnitude > maxDistance)
+            {
+                StartReturn();
+                soundPlayer.PlayMissedSound();
+            }
         }
         
         public void DetachFromShip(bool detach)
@@ -106,6 +112,7 @@ namespace GameObjects.Astronaut.Scripts
             DetachFromShip(false);
             spaceShip.ResetShot();
             gameObject.layer = _defaultLayer;
+            soundPlayer.StopFlySound();
         }
         
         private void OnCollisionEnter2D(Collision2D other)
@@ -121,9 +128,11 @@ namespace GameObjects.Astronaut.Scripts
                 if (other.gameObject.layer == 12)
                 {
                     GameState.State.Win();
+                    soundPlayer.PlayEnterSunSound();
                     return;
                 }
             }
+            soundPlayer.PlayFailSound();
             StartReturn();
         }
 

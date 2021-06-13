@@ -13,7 +13,8 @@ namespace GameObjects.SpaceShip.Scripts
         private Camera _cam;
         private DistanceJoint2D _joint;
         private UpdateLineRendererTarget _updateLineRenderer;
-    
+
+        public AudioSource audio;
         public GameObject aimPreview;
         public Color[] colors;
         
@@ -64,8 +65,10 @@ namespace GameObjects.SpaceShip.Scripts
         {
             if (!_isShot)
             {
+                audio.Play();
                 Astronaut.Scripts.Astronaut target = astronauts[_next];
                 target.DetachFromShip(true);
+                target.soundPlayer.PlayFlySound();
                 
                 Rigidbody2D rb = target.gameObject.GetComponent<Rigidbody2D>();
                 Vector3 launchDirection = (GetWorldPositionOnPlane(_mousePos,0) - transform.position).normalized;
