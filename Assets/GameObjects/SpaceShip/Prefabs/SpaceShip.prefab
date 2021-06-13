@@ -281,14 +281,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f65a6ddd16fe3478dfbd55ddfb6866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 8836902218075594341}
   aimPreview: {fileID: 8425308191955011390}
-  colors: []
+  colors:
+  - {r: 0.19339621, g: 0.5455273, b: 1, a: 1}
+  - {r: 1, g: 0.5843237, b: 0, a: 1}
   astronauts:
   - {fileID: 6283278578904063306}
   - {fileID: 1223695583515336104}
   launchForce: 1200
   orangeFirst: 0
-  lazzorLength: 0
+  lazzorLength: 2
 --- !u!232 &6283278577834436637
 DistanceJoint2D:
   m_ObjectHideFlags: 0

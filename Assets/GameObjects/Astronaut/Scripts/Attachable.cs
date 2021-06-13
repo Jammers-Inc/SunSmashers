@@ -27,6 +27,9 @@ namespace GameObjects.Astronaut.Scripts
             _astronaut.spaceShip.ResetShot();
             _astronaut.spaceShip.DetachOthers(gameObject);
             _astronaut.spaceShip.AttachmentCallback(gameObject);
+            
+            _astronaut.soundPlayer.PlayGrabSound();
+            _astronaut.soundPlayer.StopFlySound();
         }
     
         public void Detach()
@@ -36,6 +39,8 @@ namespace GameObjects.Astronaut.Scripts
                 _rb.constraints = RigidbodyConstraints2D.None;
                 isAttached = false;
                 _astronaut.StartReturn();
+                _astronaut.soundPlayer.PlayFlySound();
+                _astronaut.soundPlayer.PlayReleaseGrapSound();
             }
         }
     }
