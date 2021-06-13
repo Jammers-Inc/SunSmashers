@@ -31,7 +31,7 @@ public class UIHandler : MonoBehaviour
 
     public void ShowWinScreen()
     {
-        winscreen.SetActive(true);
+        //Winscreen.instance.gameobject.setActive(true);
     }
 
     public void Quit()

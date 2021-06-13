@@ -133,7 +133,6 @@ namespace GameObjects.Astronaut.Scripts
         {
             if (other.gameObject.layer == 12)
             {
-                GameState.State.Win();
                 soundPlayer.PlayEnterSunSound();
                 return;
             }
