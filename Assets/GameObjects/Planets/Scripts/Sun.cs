@@ -6,6 +6,8 @@ public class Sun : MonoBehaviour
 {
     public Barrier barrier;
 
+    public GameObject explosion;
+
     public GameObject[] barriers;
     // Start is called before the first frame update
     void Update()
@@ -24,6 +26,14 @@ public class Sun : MonoBehaviour
                 barriers[0].SetActive(false);
                 barriers[1].SetActive(true);
                 break;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Astronaut"))
+        {
+            explosion.SetActive(true);
         }
     }
 

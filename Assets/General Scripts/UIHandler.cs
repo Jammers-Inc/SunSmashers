@@ -37,4 +37,9 @@ public class UIHandler : MonoBehaviour
     {
         
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
