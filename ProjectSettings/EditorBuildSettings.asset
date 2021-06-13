@@ -6,7 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Shipping/ShippingLevel.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Shipping/MainMenu.unity
+    guid: 3232e599dbca0ab41a848f859da5b928
+  - enabled: 1
+    path: Assets/Scenes/Dev/Tutorial_It1.unity
+    guid: e9c8a5626fe0c2645b6e4de51b7e9487
+  - enabled: 1
+    path: Assets/Scenes/Dev/Level1_It1.unity
+    guid: 8aa7c833cd895b044a082691e4db2041
+  - enabled: 1
+    path: Assets/Scenes/Dev/Level2_It2.unity
+    guid: 03f2a47759b737f46ac6bcccf816b528
+  - enabled: 1
+    path: Assets/Scenes/Dev/Level3_It1.unity
+    guid: dac6c44478aeb5e44bdf34a8cb0008b6
+  - enabled: 1
+    path: Assets/Scenes/Dev/Level4_It1.unity
+    guid: fb9bd3c6b624a81409c6a2b10d640679
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4e2077de130e79845aeb460cda48df5c, type: 2}
