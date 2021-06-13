@@ -158,6 +158,9 @@ MonoBehaviour:
   attachableLayers:
     serializedVersion: 2
     m_Bits: 320
+  passableLayers:
+    serializedVersion: 2
+    m_Bits: 8192
   isAttached: 0
 --- !u!58 &1661523795545876857
 CircleCollider2D:

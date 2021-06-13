@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AstronautOrange
       objectReference: {fileID: 0}
+    - target: {fileID: 1661523795545876849, guid: 9aecd13bb5d6fcb49b6bf7dcdae482b6, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1661523795545876851, guid: 9aecd13bb5d6fcb49b6bf7dcdae482b6, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -90,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 1661523795545876860, guid: 9aecd13bb5d6fcb49b6bf7dcdae482b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661523795545876863, guid: 9aecd13bb5d6fcb49b6bf7dcdae482b6, type: 3}
+      propertyPath: passableLayers.m_Bits
+      value: 16384
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aecd13bb5d6fcb49b6bf7dcdae482b6, type: 3}
