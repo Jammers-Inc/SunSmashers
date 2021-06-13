@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIHandler : MonoBehaviour
 {
     public static UIHandler Handler;
 
-    private GameObject[] menus;
+    public GameObject winscreen;
     private void OnEnable()
     {
         Handler = this;
@@ -16,11 +17,6 @@ public class UIHandler : MonoBehaviour
     private void OnDisable()
     {
         Handler = null;
-    }
-
-    public void ShowMainMenu()
-    {
-        Instantiate(menus[0]);
     }
     
     public void ShowLevelMenu()
@@ -35,7 +31,7 @@ public class UIHandler : MonoBehaviour
 
     public void ShowWinScreen()
     {
-        
+        winscreen.SetActive(true);
     }
 
     public void Quit()
