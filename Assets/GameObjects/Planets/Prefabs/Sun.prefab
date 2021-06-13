@@ -198,8 +198,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1273784245
-  m_SortingLayer: 2
+  m_SortingLayerID: 1267606965
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d981ddb932bcbb64796efcb5b4ae5083, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrier: 0
+  explosion: {fileID: 3247716928152749557}
   barriers:
   - {fileID: 3791821026795099586}
   - {fileID: 7917667712336822165}
@@ -452,6 +453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b51f245b0d500459b0b7022d06f7b6, type: 3}
+--- !u!1 &3247716928152749557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 642741184543815630, guid: f3b51f245b0d500459b0b7022d06f7b6, type: 3}
+  m_PrefabInstance: {fileID: 2736302797093745211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &946757455942055592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2943878640205481107, guid: f3b51f245b0d500459b0b7022d06f7b6, type: 3}

@@ -53,6 +53,9 @@ TagManager:
   - name: Play
     uniqueID: 2455008013
     locked: 0
+  - name: Sun
+    uniqueID: 1267606965
+    locked: 0
   - name: Asteroid
     uniqueID: 2239710881
     locked: 0

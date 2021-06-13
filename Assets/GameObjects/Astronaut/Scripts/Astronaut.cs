@@ -124,13 +124,6 @@ namespace GameObjects.Astronaut.Scripts
                     _a.Attach(other.gameObject);
                     return;
                 }
-
-                if (other.gameObject.layer == 12)
-                {
-                    GameState.State.Win();
-                    soundPlayer.PlayEnterSunSound();
-                    return;
-                }
             }
             soundPlayer.PlayFailSound();
             StartReturn();
@@ -138,6 +131,12 @@ namespace GameObjects.Astronaut.Scripts
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.gameObject.layer == 12)
+            {
+                GameState.State.Win();
+                soundPlayer.PlayEnterSunSound();
+                return;
+            }
             if (other.gameObject.layer == 11)
             {
                 if (_isRetracting)
