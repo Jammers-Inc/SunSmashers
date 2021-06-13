@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using General_Scripts;
 using UnityEngine;
 
 public class Winscreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Next()
     {
-        
+        SceneManager.manager.LoadNext();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MainMenu()
     {
-        
+        SceneManager.manager.LoadScene(0);
     }
 }

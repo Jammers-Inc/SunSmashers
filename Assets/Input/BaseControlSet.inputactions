@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Detach",
+                    "name": "Respawn",
                     "type": "Button",
                     "id": "4790ec0e-ef98-4da2-b369-193e71fa24fd",
                     "expectedControlType": "Button",
@@ -60,7 +60,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "BaseSceme",
-                    "action": "Detach",
+                    "action": "Respawn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
