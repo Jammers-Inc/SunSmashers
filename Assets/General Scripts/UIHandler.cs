@@ -9,6 +9,7 @@ public class UIHandler : MonoBehaviour
     public static UIHandler Handler;
 
     public GameObject winscreen;
+    
     private void OnEnable()
     {
         Handler = this;
@@ -18,20 +19,10 @@ public class UIHandler : MonoBehaviour
     {
         Handler = null;
     }
-    
-    public void ShowLevelMenu()
-    {
-        
-    }
-
-    public void ShowHUD()
-    {
-        
-    }
 
     public void ShowWinScreen()
     {
-        //Winscreen.instance.gameobject.setActive(true);
+        winscreen.gameObject.SetActive(true);
     }
 
     public void Quit()

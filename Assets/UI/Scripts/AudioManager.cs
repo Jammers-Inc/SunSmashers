@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public enum Volume{master, music, sfx, bit, ui};
-
-    void Awake()
+    
+    private void Awake()
     {
         if(AudioManager.instance == null)
         {
@@ -23,8 +24,7 @@ public class AudioManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
-    
-    
+
     private float RemapVolumePercent(float percent)
     {
         float newValue = 0f;

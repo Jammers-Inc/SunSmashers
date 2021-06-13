@@ -35,6 +35,7 @@ namespace GameObjects.SpaceShip.Scripts
 
         private bool _isShot;
         private static readonly int EmissionColor = Shader.PropertyToID("EmissionColor");
+        private static readonly int GlowColor = Shader.PropertyToID("GlowColor");
 
         private void OnEnable()
         {
@@ -59,6 +60,7 @@ namespace GameObjects.SpaceShip.Scripts
             _sr.flipX = _rb.velocity.x < 0;
             _updateLineRenderer.target.position = position + (GetWorldPositionOnPlane(_mousePos,0) - position).normalized * lazzorLength;
             _updateLineRenderer.renderer.material.SetColor(EmissionColor, colors[_next]);
+            _sr.material.SetColor(GlowColor, colors[_next]);
         }
 
         public void Shoot(InputAction.CallbackContext context)

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace General_Scripts
 {
@@ -22,7 +23,7 @@ namespace General_Scripts
         public void LoadScene(int id)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(id);
-            LastLoadedScene = id;
+            LastLoadedScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         }
 
         public void ReloadScene()
@@ -37,8 +38,7 @@ namespace General_Scripts
                 LoadScene(0);
                 return;
             }
-            
-            LoadScene(LastLoadedScene + 1);
+            LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

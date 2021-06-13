@@ -1675,6 +1675,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BondingBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5050245912198255101, guid: 5dec2dccfc240a24888156a4cff72caa, type: 3}
+      propertyPath: m_Size.x
+      value: 14.514619
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050245912198255101, guid: 5dec2dccfc240a24888156a4cff72caa, type: 3}
+      propertyPath: m_Offset.x
+      value: -7.7426906
+      objectReference: {fileID: 0}
     - target: {fileID: 5472841142444242850, guid: 5dec2dccfc240a24888156a4cff72caa, type: 3}
       propertyPath: m_RootOrder
       value: 5
